@@ -23,3 +23,12 @@ Note:
 */
 
 // SOLUTION =================
+
+/**
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */
+const numJewelsInStones = (J, S) => {
+
+}
