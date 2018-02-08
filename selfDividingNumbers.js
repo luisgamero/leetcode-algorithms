@@ -20,3 +20,12 @@ Note: The boundaries of each input argument are 1 <= left <= right <= 10000.
 */
 
 // SOLUTION =================
+
+/**
+ * @param {number} left
+ * @param {number} right
+ * @return {number[]}
+ */
+const selfDividingNumbers = (left, right) => {
+
+}
