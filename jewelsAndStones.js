@@ -39,3 +39,22 @@ const numJewelsInStones = (J, S) => {
 
   return count
 }
+
+// ALTERNATE SOLUTION ======
+
+const numJewelsInStones = (J, S) => {
+  let count = 0
+
+  const stoneMap = {}
+
+  for (let i = 0; i < S.length; i++) {
+    if (stoneMap[S[i]] === undefined) stoneMap[S[i]] = 0
+    stoneMap[S[i]]++
+  }
+
+  for (let i = 0; i < J.length; i++) {
+    if (stoneMap[J[i]]) count = count + stoneMap[J[i]]
+  }
+
+  return count
+}
