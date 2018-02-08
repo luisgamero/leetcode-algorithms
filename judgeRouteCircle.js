@@ -16,3 +16,11 @@ Example 2:
 */
 
 // SOLUTION =================
+
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+const judgeCircle = (moves) => {
+
+}
