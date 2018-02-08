@@ -46,5 +46,17 @@ const leftpad = (bin, num) => {
  * @return {number}
  */
 const hammingDistance = (x, y) => {
+  let count = 0
+  let binX = x.toString(2)
+  let binY = y.toString(2)
+  const lengthDiff = binX.length - binY.length
 
+  if (lengthDiff > 0) binY = leftpad(binY, lengthDiff)
+  if (lengthDiff < 0) binX = leftpad(binX, -lengthDiff)
+
+  for (let i = 0; i < binX.length; i++) {
+    if (binX[i] !== binY[i]) count++
+  }
+
+  return count
 }
