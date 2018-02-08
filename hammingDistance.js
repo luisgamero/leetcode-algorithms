@@ -23,3 +23,14 @@ Example:
 The above arrows point to positions where the corresponding bits are different.
 
 */
+
+// SOLUTION =================
+
+/**
+ * @param {number} x
+ * @param {number} y
+ * @return {number}
+ */
+const hammingDistance = (x, y) => {
+
+}
