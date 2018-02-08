@@ -28,3 +28,19 @@ Note: The merging process must start from the root nodes of both trees.
 */
 
 // SOLUTION =================
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} t1
+ * @param {TreeNode} t2
+ * @return {TreeNode}
+ */
+const mergeTrees = (t1, t2) => {
+
+}
