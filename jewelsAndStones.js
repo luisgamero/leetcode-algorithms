@@ -30,5 +30,12 @@ Note:
  * @return {number}
  */
 const numJewelsInStones = (J, S) => {
+  // loop though string S, each iteration, checking if val is found in string J
+  let count = 0
 
+  for (let i = 0; i < S.length; i++) {
+    if (J.indexOf(S[i]) !== -1) count++
+  }
+
+  return count
 }
