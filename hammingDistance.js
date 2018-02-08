@@ -25,6 +25,20 @@ The above arrows point to positions where the corresponding bits are different.
 */
 
 // SOLUTION =================
+// helper
+/**
+ * @param {string} bin (binary number string)
+ * @param {number} num (number of zeros to left-pad with)
+ * @return {string}
+ */
+const leftpad = (bin, num) => {
+  let zeros = ''
+  while (num) {
+    zeros = zeros + '0'
+    num--
+  }
+  return zeros + bin
+}
 
 /**
  * @param {number} x
