@@ -27,5 +27,21 @@ Note: The boundaries of each input argument are 1 <= left <= right <= 10000.
  * @return {number[]}
  */
 const selfDividingNumbers = (left, right) => {
+  let numStr
+  const validNumsArr = []
 
+  while (left <= right) {
+    numStr = left.toString()
+    if (numStr.indexOf('0') !== -1) {
+      left++
+      continue
+    }
+
+    if (numStr.split('').filter(digit => left % +digit === 0).length === numStr.length) {
+      validNumsArr.push(left)
+    }
+    left++
+  }
+
+  return validNumsArr
 }
