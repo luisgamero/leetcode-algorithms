@@ -45,3 +45,30 @@ const selfDividingNumbers = (left, right) => {
 
   return validNumsArr
 }
+
+// ALTERNATE SOLUTION =======
+
+/**
+ * @param {number} left
+ * @param {number} right
+ * @return {number[]}
+ */
+const selfDividingNumbers = (left, right) => {
+  let numStr
+  const validNumsArr = []
+
+  while (left <= right) {
+    numStr = left.toString()
+    if (numStr.indexOf('0') !== -1) {
+      left++
+      continue
+    }
+
+    if (numStr.split('').filter(digit => left % +digit === 0).length === numStr.length) {
+      validNumsArr.push(left)
+    }
+    left++
+  }
+
+  return validNumsArr
+}
