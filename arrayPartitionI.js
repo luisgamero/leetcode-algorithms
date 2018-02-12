@@ -16,3 +16,19 @@ Note:
 */
 
 // SOLUTION =================
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const arrayPairSum = (nums) => {
+  const sortedNums = nums.sort((a, b) => {
+    if (a === b) return 0
+    return a < b ? -1 : 1
+  })
+
+  return sortedNums.reduce((acc, curr, index) => {
+    if (index % 2 === 0) acc += curr
+    return acc
+  }, 0)
+}
