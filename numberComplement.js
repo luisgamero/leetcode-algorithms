@@ -27,5 +27,16 @@ Example 2:
  * @return {number}
  */
 const findComplement = (num) => {
+  const binaryNum = num.toString(2)
+  let binaryComplement = ''
 
+  for (let i = 0; i < binaryNum.length; i++) {
+    if (binaryNum[i] === '1') {
+      binaryComplement += '0'
+    } else {
+      binaryComplement += '1'
+    }
+  }
+
+  return parseInt(binaryComplement, 2)
 }
