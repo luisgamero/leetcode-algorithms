@@ -16,5 +16,16 @@ Note:
  * @return {number}
  */
 const singleNumber = (nums) => {
+  // create map of existing numbers
+  const map = {}
 
+  // fill map (initial value of true, for duplicate num change value to false)
+  nums.forEach((num) => {
+    map[num] = !map[num]
+  })
+
+  // iterate through map, return single num (with value of true)
+  for (let num in map) {
+    if (map.hasOwnProperty(num) && map[num]) return +num
+  }
 }
