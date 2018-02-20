@@ -54,3 +54,22 @@ const fizzBuzz = (n) => {
 
   return result
 }
+
+// ALTERNATE SOLUTION =======
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+const fizzBuzz = (n) => {
+  const result = []
+
+  for (let i = 1; i <= n; i++) {
+    let val = ''
+    if (i % 3 === 0) val += 'Fizz'
+    if (i % 5 === 0) val += 'Buzz'
+    result.push(val || val + i)
+  }
+
+  return result
+}
