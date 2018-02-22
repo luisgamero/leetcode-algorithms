@@ -2,7 +2,7 @@
 
 /* PROMPT ===================
 
-Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Given an array nums, write a function to move all zeroes to the end of it while maintaining the relative order of the non-zero elements.
 
 For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
 
@@ -19,5 +19,26 @@ Note:
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 const moveZeroes = (nums) => {
+  let numZeroes = 0
+  const len = nums.length
+  const tempArr = []
 
+  for (let i = 0; i < len; i++) {
+    if (nums[i] === 0) {
+      numZeroes++
+    } else {
+      tempArr.push(nums[i])
+    }
+  }
+
+  while (numZeroes > 0) {
+    tempArr.push(0)
+    numZeroes--
+  }
+
+  for (let i = 0; i < len; i++) {
+    nums[i] = tempArr[i]
+  }
 }
+
+// note: solution is not optimal
