@@ -54,8 +54,8 @@ const moveZeroes = (nums) => {
 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== 0) {
-      nums[lastNonZeroIndex + 1] = nums[i]
       lastNonZeroIndex++
+      nums[lastNonZeroIndex] = nums[i]
     }
   }
 
