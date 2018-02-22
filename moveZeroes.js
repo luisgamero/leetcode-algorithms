@@ -18,6 +18,7 @@ Note:
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
+// note: solution is not optimal
 const moveZeroes = (nums) => {
   let numZeroes = 0
   const len = nums.length
@@ -41,4 +42,24 @@ const moveZeroes = (nums) => {
   }
 }
 
-// note: solution is not optimal
+
+// ALTERNATE SOLUTION =======
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+const moveZeroes = (nums) => {
+  let lastNonZeroIndex = -1
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[lastNonZeroIndex + 1] = nums[i]
+      lastNonZeroIndex++
+    }
+  }
+
+  for (let i = lastNonZeroIndex + 1; i < nums.length; i++) {
+    nums[i] = 0
+  }
+}
