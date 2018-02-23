@@ -63,3 +63,23 @@ const moveZeroes = (nums) => {
     nums[i] = 0
   }
 }
+
+// ALTERNATE SOLUTION =======
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+const moveZeroes = (nums) => {
+  let lastZeroIndex
+
+  for (let i = 0; i < nums.length; i++) {
+    if (lastZeroIndex === undefined) {
+      if (nums[i] === 0) lastZeroIndex = i
+    } else if (nums[i] !== 0) {
+      nums[lastZeroIndex] = nums[i]
+      nums[i] = 0
+      lastZeroIndex++
+    }
+  }
+}
