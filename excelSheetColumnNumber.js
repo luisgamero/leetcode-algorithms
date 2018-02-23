@@ -23,5 +23,17 @@ For example:
  * @return {number}
  */
 const titleToNumber = (s) => {
+  let total = 0
 
+  for (let i = 0; i < s.length; i++) {
+    // in reverse order, convert letter to number
+    const letter = s[s.length - 1 - i]
+    const num = letter.charCodeAt(0) - 64
+    // based on position, get "column" value (26^i * num)
+    const value = Math.pow(26, i) * num
+    // add to total
+    total += value
+  }
+
+  return total
 }
