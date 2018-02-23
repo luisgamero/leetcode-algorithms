@@ -17,5 +17,15 @@ Example:
  * @return {number}
  */
 const getSum = (a, b) => {
+  let carry
 
+  while (b !== 0) {
+    carry = a & b
+    a = a ^ b
+    b = carry << 1
+  }
+  return a
 }
+
+// note: this requires bit manipulation
+//
