@@ -15,5 +15,13 @@ Design an algorithm to find the maximum profit. You may complete as many transac
  * @return {number}
  */
 const maxProfit = (prices) => {
+  let profit = 0
 
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i - 1] < prices[i]) profit += prices[i] - prices[i - 1]
+  }
+
+  return profit
 }
+
+// note: this only works if you can sell then buy a stock the same day (not holding mutiple stocks at once)
