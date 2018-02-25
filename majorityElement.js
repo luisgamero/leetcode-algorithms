@@ -15,5 +15,11 @@ You may assume that the array is non-empty and the majority element always exist
  * @return {number}
  */
 const majorityElement = (nums) => {
+  const map = {}
 
+  for (let i = 0; i < nums.length; i++) {
+    map[nums[i]] = map[nums[i]] || 0
+    map[nums[i]]++
+    if (map[nums[i]] > (nums.length / 2)) return nums[i]
+  }
 }
