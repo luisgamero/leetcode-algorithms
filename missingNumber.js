@@ -26,5 +26,13 @@ Note:
  * @return {number}
  */
 const missingNumber = (nums) => {
+  let indexTotal = nums.length
+  let numsTotal = 0
 
+  for (let i = 0; i < nums.length; i++) {
+    indexTotal += i
+    numsTotal += nums[i]
+  }
+
+  return indexTotal - numsTotal
 }
