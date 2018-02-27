@@ -26,5 +26,27 @@ Follow up:
  * @return {number[]}
  */
 const intersect = (nums1, nums2) => {
+  const result = []
+  const map = {}
+  let shorter = nums1
+  let longer = nums2
 
+  if (nums1.length > nums2.length) {
+    shorter = nums2
+    longer = nums1
+  }
+
+  for (let i = 0; i < shorter.length; i++) {
+    map[shorter[i]] = map[shorter[i]] || 0
+    map[shorter[i]]++
+  }
+
+  for (let i = 0; i < longer.length; i++) {
+    if (map[longer[i]]) {
+      result.push(longer[i])
+      map[longer[i]]--
+    }
+  }
+
+  return result
 }
