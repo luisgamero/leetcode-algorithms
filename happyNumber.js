@@ -18,9 +18,35 @@ Example: 19 is a happy number
 // SOLUTION =================
 
 /**
+ * helper: return sum of digits squared
+ * @param  {Number} num
+ * @return {Number}
+ */
+const sumDigits = (num) => {
+  let result = 0
+  let digit
+
+  while (num !== 0) {
+    digit = num % 10
+    result += Math.pow(digit, 2)
+    num = (num - digit) / 10
+  }
+
+  return result
+}
+
+/**
  * @param {number} n
  * @return {boolean}
  */
 const isHappy = (n) => {
+  const sums = []
 
+  while (sums.indexOf(n) === -1) {
+    if (n === 1) return true
+    sums.push(n)
+    n = sumDigits(n)
+  }
+
+  return false
 }
