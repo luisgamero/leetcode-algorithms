@@ -25,3 +25,5 @@ const deleteNode = (node) => {
   node.val = node.next.val
   node.next = node.next.next
 }
+
+// note: this actually doesn't delete the note, it simply modifies the given node with the next node's values
