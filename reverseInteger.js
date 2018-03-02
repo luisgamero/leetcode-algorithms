@@ -49,3 +49,21 @@ const reverse = (x) => {
 
   return isNeg ? -1 * reversed : reversed
 }
+
+// ALTERNATE SOLUTION =======
+
+/**
+ * alternate solution, converts to array
+ * @param  {number} x
+ * @return {number}
+ */
+const reverse = (x) => {
+  const isNeg = x < 0
+  if (isNeg) x *= -1
+
+  const reversed = parseInt(('' + x).split('').reverse((a, b) => a - b).join(''))
+
+  if (reversed > (Math.pow(2, 31) - 1)) return 0
+
+  return isNeg ? -1 * reversed : reversed
+}
