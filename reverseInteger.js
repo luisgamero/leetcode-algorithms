@@ -31,5 +31,21 @@ Note:
  * @return {number}
  */
 const reverse = (x) => {
+  if (x === 0) return x
+  const isNeg = x < 0
+  let reversed = ''
+  let digit
 
+  x = Math.abs(x)
+  while (x !== 0) {
+    digit = x % 10
+    reversed += digit
+    x = (x - digit) / 10
+  }
+
+  reversed = +reversed
+
+  if (reversed > (Math.pow(2, 31) - 1)) return 0
+
+  return isNeg ? -1 * reversed : reversed
 }
