@@ -22,5 +22,8 @@ For the purpose of this problem, we define empty string as valid palindrome.
  * @return {boolean}
  */
 const isPalindrome = (s) => {
-
+  if (s === '') return true
+  const stripped = (s.toLowerCase()).replace(/[\W_]/g, '')
+  const reversed = stripped.split('').reverse((a, b) => a - b).join('')
+  return stripped === reversed
 }
